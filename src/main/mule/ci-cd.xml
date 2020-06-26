@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="16ca4a58-d802-41d0-b358-f48efc2ea2a4" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ci-cdFlow" doc:id="7d4bff25-9aa4-4603-a329-f065055561d5" >
+		<http:listener doc:name="Listener" doc:id="238a4282-0600-45a4-aa41-14bd82ffad21" config-ref="HTTP_Listener_config" path="/CI-CD" allowedMethods="GET"/>
+		<set-payload value="my first resporatary " doc:name="Set Payload" doc:id="a45767ac-7a87-4d2e-ba52-34c018906c7d" />
+		<logger level="INFO" doc:name="Logger" doc:id="86d22002-e928-4fe9-ae36-5abb6e2b46c7" message="#[payload]"/>
+	</flow>
+</mule>
