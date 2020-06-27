@@ -11,5 +11,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener doc:name="Listener" doc:id="238a4282-0600-45a4-aa41-14bd82ffad21" config-ref="HTTP_Listener_config" path="/CI-CD" allowedMethods="GET"/>
 		<set-payload value="my first resporatary " doc:name="Set Payload" doc:id="a45767ac-7a87-4d2e-ba52-34c018906c7d" />
 		<logger level="INFO" doc:name="Logger" doc:id="86d22002-e928-4fe9-ae36-5abb6e2b46c7" message="#[payload]"/>
+		<set-payload value="first sample project" doc:name="Set Payload" doc:id="f0439a1d-d88e-481e-afe7-32415f2a53f1" />
 	</flow>
 </mule>
