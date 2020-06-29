@@ -31,6 +31,34 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+				<configuration>
+<cloudHubDeployment>
+      <uri>https://anypoint.mulesoft.com/</uri>
+      <muleVersion>mule-version</muleVersion>
+      <username>girivar</username>
+      <password>Girivar@20</password>
+      <applicationName>cloudhub-application-name</applicationName>
+      <environment>Sandbox</environment>
+      <region>eu-east-2</region>
+<workers>1</workers>
+<workerType>micro </workerType>
+<workers>1</workers>
+<uri>https://anypoint.mulesoft.com</uri>
+<applicationName>ci/cd</applicationName>
+      <properties>
+        <key>value</key>
+      </properties>
+  </cloudHubDeployment>
+</configuration>
+<executions>
+  <execution>
+    <id>deploy</id>
+    <phase>deploy</phase>
+    <goals>
+      <goal>deploy</goal>
+    </goals>
+  </execution>
+</executions>
 				</configuration>
 			</plugin>
 		</plugins>
